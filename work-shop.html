@@ -1,0 +1,34 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../fernando-espinosa.html"
+
+<dom-module id="work-shop">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+    <fernando-espinosa></fernando-espinosa>
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class WorkShop extends Polymer.Element {
+      static get is() { return 'work-shop'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'work-shop'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(WorkShop.is, WorkShop);
+    window.customElements.define(FernandoEspinosa.is, FernandoEspinosa);
+  </script>
+</dom-module>
