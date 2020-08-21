@@ -1,0 +1,50 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link real="import" href="../bower_components/vaadin-notification/vaadin-notification.html">
+
+<dom-module id="fernando-espinosa">
+  
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+    clickeado <span>0</span> veces.
+    <vaadin-button>Button</vaadin-button>
+  </template>
+
+  <script>
+    /**
+     * `fernando-espinosa`
+     * web components
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FernandoEspinosa extends Polymer.Element {
+      static get is() { return 'fernando-espinosa'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'fernando-espinosa'
+            
+          }
+        };
+      }
+    }
+    
+    customElements.whenDefined('vaadin-button').then(function() {
+    let i = 0;
+    const button = document.querySelector('vaadin-button');
+    button.addEventListener('click', function() {
+      button.nextElementSibling.textContent = ++i;
+    });
+  });
+
+    window.customElements.define(FernandoEspinosa.is, FernandoEspinosa);
+    
+  </script>
+</dom-module>
